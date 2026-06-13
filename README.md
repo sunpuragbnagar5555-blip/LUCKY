@@ -28,7 +28,71 @@
                     <p>Domain list: <a href="https://444.cn/?domain=lucky00.com" target="_blank">444.cn</a></p>
                     <p style="padding-top: 10px;" id="weixin">
                         <a class="btn btn_blue">Online Service</a>
-                        <span class="qr-preview"><a href="https://t.me/www444cn" target="_blank"><img src="./static/images/code.png" title="Telgram QR code" alt="Telgram QR code"></a></span>
+                        <span class="qr-preview"><a href="https://t.me/www// Scene
+const scene = new THREE.Scene();
+
+// Camera
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+camera.position.set(0, 5, 10);
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Light
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(5, 10, 7);
+scene.add(light);
+
+// Road
+const roadGeo = new THREE.PlaneGeometry(10, 100);
+const roadMat = new THREE.MeshStandardMaterial({ color: 0x333333 });
+const road = new THREE.Mesh(roadGeo, roadMat);
+road.rotation.x = -Math.PI / 2;
+scene.add(road);
+
+// Car
+const carGeo = new THREE.BoxGeometry(1, 1, 2);
+const carMat = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+const car = new THREE.Mesh(carGeo, carMat);
+car.position.y = 0.5;
+scene.add(car);
+
+// Controls
+let speed = 0.5;
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") car.position.x -= 0.5;
+  if (e.key === "ArrowRight") car.position.x += 0.5;
+  if (e.key === "ArrowUp") speed += 0.1;
+  if (e.key === "ArrowDown") speed -= 0.1;
+});
+
+// Resize Fix
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// Animation Loop
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Move road (fake motion)
+  road.position.z += speed;
+  if (road.position.z > 50) road.position.z = 0;
+
+  renderer.render(scene, camera);
+}
+
+animate();cn" target="_blank"><img src="./static/images/code.png" title="Telgram QR code" alt="Telgram QR code"></a></span>
                     </p>
                 </div>
             </div>
