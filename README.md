@@ -25,7 +25,7 @@
                 <div class="info-card">
                     <p>Hello.</p>
                     <p>The domain name <span class="replace"></span> might be for sale.</p>
-                    <p>Domain list: <a href="https://444.cn/?domain=lucky00.com" target="_blank">444.cn</a></p>
+                    <p>Domain list: <a href="https://@LuckyLgl-n2d/?domain=lucky00.com" target="_blank">444.cn</a></p>
                     <p style="padding-top: 10px;" id="weixin">
                         <a class="btn btn_blue">Online Service</a>
                         <span class="qr-preview"><a href="https://t.me/www// Scene
